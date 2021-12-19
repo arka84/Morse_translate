@@ -20,7 +20,7 @@ parameter	waitStart	= 2'b00,
 		waitNext	= 2'b01,
 		waitData	= 2'b10;
 
-parameter	//p_Start		= 11'b10111000000,// formiryet E0, skan kod sostoit iz 2
+parameter	
 		p_Break		= 11'b11111100000,
 		p_BtnUP		= 11'b10000111000,//a
 		p_BtnDOWN	= 11'b10001100100,//b
@@ -54,19 +54,7 @@ parameter	//p_Start		= 11'b10111000000,// formiryet E0, skan kod sostoit iz 2
 		
 assign bit=0;
 
-/*always@(posedge clock or negedge reset)
-begin
-	if(!reset) begin
-		clk_div1<=0;
-	 end
-	else begin
-		if(clk_div1!=11)
-			clk_div1<=clk_div1+1;
-		else
-			clk_div1<=0;
-	 end
-end	*/
-//always res<=!reset;
+
 always@(negedge ps2clk) begin
 	incdata[bitsReceived] = ps2data;
 	bitsReceived = bitsReceived + 1'b1;
